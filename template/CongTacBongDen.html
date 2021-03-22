@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Công Tắc Bóng Đèn</title>
+</head>
+
+<body>
+    <div>
+
+        <button onclick="turnOn()">
+            Bật
+        </button>
+        <button onclick="turnOff()">
+            Tắt
+        </button>
+    </div>
+    <h2 id="bongDen"></h2>
+    <h2 id="giatri"></h2>
+</body>
+<script>
+
+    var bongDen = [
+        'bóng đèn 1',
+        'bóng đèn 2',
+        'bóng đèn 3',
+        'bóng đèn 4',
+        'bóng đèn 5',
+        'bóng đèn 6',
+    ]
+    var giatri = [
+        true, false, true, false, true, false
+    ]
+
+    for (let index = 0; index < bongDen.length; index++) {
+        const element = bongDen[index];
+        // document.write(
+        //      element +' ' 
+        //     );
+        document.getElementById("bongDen").innerHTML = bongDen;
+        for (let index1 = giatri.length - 1; index1 < giatri.length; index1++) {
+            const element1 = giatri[index];
+            // document.write(
+            //     element1 ? ('Đã bật' + '<br>') : ('Đã Tắt' + '<br>')
+            // )
+            document.getElementById("giatri").innerHTML = giatri
+        }
+    }
+
+    var congtac = Boolean
+    var Den = Boolean
+    function turnOn() {
+        vitri = prompt("nhập bóng đèn bạn muốn đổi trạng thái");
+        if (
+            vitri >= 0 && vitri <= giatri.length
+        ) {
+            giatri.splice(vitri, 0, giatri[vitri - 1] = true)
+            giatri.splice(vitri, 1)
+            document.getElementById("bongDen").innerHTML = bongDen
+            document.getElementById("giatri").innerHTML = giatri
+            alert("Đã bật bóng đèn số " + vitri + "thành công")
+        }
+        else {
+            alert(
+                'bóng đèn không tồn tại'
+            )
+        }
+    }
+    function turnOff() {
+        vitri = prompt("nhập bóng đèn bạn muốn đổi trạng thái");
+        if (
+            vitri >= 0
+        ) {
+            giatri.splice(vitri, 0, giatri[vitri - 1] = false)
+            giatri.splice(vitri, 1)
+            document.getElementById("bongDen").innerHTML = bongDen
+            document.getElementById("giatri").innerHTML = giatri
+            alert("Đã tắt bóng đèn số " + vitri + "thành công")
+        }
+        else {
+            alert('Đèn đã tắt')
+        }
+    }
+</script>
+
+</html>

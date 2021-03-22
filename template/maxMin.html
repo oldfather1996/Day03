@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    Tìm Max Min
+</head>
+
+<body>
+
+    <script>
+
+        var a = Array.from({ length: 40 }, () => Math.floor(Math.random() * 100));
+        document.write(a)
+        // for (let index = 0; index < a.length; index++) {
+
+        //     if (index % 15 == 0) {
+        //         document.write('<br>');
+        //     }
+
+        // }
+
+        function minNumber() {
+            var minNumber = Math.min.apply(Math, a);
+            alert('giá trị nhỏ nhất trong chuỗi vừa được tạo là ' + minNumber)
+        }
+        function maxNumber() {
+            var maxNumber = Math.max.apply(Math, a);
+            alert('giá trị lớn nhất trong chuỗi vừa được tạo là ' + maxNumber)
+        }
+    </script>
+    <div>
+        <button onclick="minNumber()">
+            Giá trị nhỏ nhất
+        </button>
+        <button onclick="maxNumber()">
+            Giá trị nhỏ nhất
+        </button>
+    </div>
+
+</body>
+
+</html>

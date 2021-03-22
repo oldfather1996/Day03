@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    Task 2
+    <link rel="stylesheet" href="../css/HomePage.css">
+</head>
+
+<body>
+    <button onclick=add()>
+        add
+    </button>
+    <button onclick=edit()>
+        edit
+    </button>
+    <button onclick=deleted()>
+        delete
+    </button>
+    <div>
+        <h2 id="product"> >
+        </h2>
+    </div>
+    <script type="text/javascript">
+        var product = ['Sp1', 'Sp2', 'Sp3', 'Sp4']
+        document.getElementById("product").innerHTML = product;
+        function deleted() {
+            Name = prompt("Nhập tên sản phẩm ", "");
+            if (
+                product.indexOf(Name) >= 0
+            ) {
+                alert(' sản phẩm nằm tại vị trí thứ ' + product.indexOf(Name) + ' trong mảng')
+                product.splice(product.indexOf(Name), 1)
+                document.getElementById("product").innerHTML = product
+            } else {
+                alert(' Tên sản phẩm không tồn tại')
+            }
+        }
+        function add() {
+            Name = prompt("Nhập tên sản phẩm ", "");
+            product.push(Name);
+            document.getElementById("product").innerHTML = product;
+        }
+        function edit() {
+            // alert(product.indexOf(Name))
+            Name = prompt("Nhập tên sản phẩm ", "");
+            if (
+                product.indexOf(Name) >= 0
+            ) {
+                editName = prompt("vui lòng sửa tên sản phẩm")
+                product.splice(product.indexOf(Name), 0, editName)
+                product.splice(product.indexOf(Name), 1)
+                alert('Sửa thành công ')
+                document.getElementById("product").innerHTML = product
+            }
+            else {
+                alert('Không có sản phẩm trong list Tự Động thêm sản phẩm')
+                product.push(Name)
+                document.getElementById("product").innerHTML = product;
+            }
+        }
+    </script>
+</body>
+
+</html>
